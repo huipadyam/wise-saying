@@ -9,9 +9,11 @@ public class Main {
 
 class App{
     public void run(){
+        //ArrayList<String>
         Scanner scanner = new Scanner(System.in);
         System.out.println("== 명언 앱 ==");
 
+        int lastNo = 1;
         while(true){
             System.out.print("명령) ");
             String command = scanner.nextLine();
@@ -26,7 +28,7 @@ class App{
                 System.out.print("작가 : ");
                 scanner.nextLine();
 
-                System.out.println("1번 명령이 등록되었습니다.");
+                System.out.println(lastNo++ + "번 명령이 등록되었습니다.");
             }
 
 
