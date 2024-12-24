@@ -35,9 +35,11 @@ class App{
             } else if(command.equals("list")){
                 System.out.println("No. / author / comment");
                 System.out.println("---------------------------");
-                for(int i = 0; i < 3; i++){
+                for(int i = 2; i >= 0; i++){
                     System.out.println("%d / %s / %s".formatted(i, authorList[i], contentList[i]));
                 }
+
+            } else if(command.equals("delete")){
 
             }
 
