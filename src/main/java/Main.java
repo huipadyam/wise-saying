@@ -28,7 +28,7 @@ class App{
                 System.out.print("작가 : ");
                 scanner.nextLine();
 
-                System.out.println(lastNo++ + "번 명령이 등록되었습니다.");
+                System.out.println("%d번 명령이 등록되었습니다.".formatted(lastNo++));
             }
 
 
