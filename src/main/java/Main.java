@@ -11,24 +11,34 @@ class App{
     public void run(){
         //ArrayList<String>
         Scanner scanner = new Scanner(System.in);
-        System.out.println("== 명언 앱 ==");
+        System.out.println("== wise-saying App ==");
 
-        int lastNo = 1;
+        int lastNo = 0;
+        String content = "";
+        String[] contentList = new String[3];
+        String[] authorList = new String[3];
         while(true){
-            System.out.print("명령) ");
+            System.out.print("command) ");
             String command = scanner.nextLine();
 
-            if(command.equals("종료")){ // 문자열 비교 시에는 .equals() 사용
-                System.out.println("명언 앱을 종료합니다.");
+            if(command.equals("quit")){ // 문자열 비교 시에는 .equals() 사용
+                System.out.println("Quit wise-saying App");
                 break;
-            } else if(command.equals("등록")){ // 문자열 비교 시에는 .equals() 사용
-                System.out.print("명언 : ");
-                scanner.nextLine(); // 입력값 가져옴. 입력값 없으면 기다린다.
+            } else if(command.equals("add")){ // 문자열 비교 시에는 .equals() 사용
+                System.out.print("comment : ");
+                contentList[lastNo] = scanner.nextLine(); // 입력값 가져옴. 입력값 없으면 기다린다.
 
-                System.out.print("작가 : ");
-                scanner.nextLine();
+                System.out.print("author : ");
+                authorList[lastNo] = scanner.nextLine();
 
-                System.out.println("%d번 명령이 등록되었습니다.".formatted(lastNo++));
+                System.out.println("%d(th) comment has been added".formatted(lastNo++));
+            } else if(command.equals("list")){
+                System.out.println("No. / author / comment");
+                System.out.println("---------------------------");
+                for(int i = 0; i < 3; i++){
+                    System.out.println("%d / %s / %s".formatted(i, authorList[i], contentList[i]));
+                }
+
             }
 
 
